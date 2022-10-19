@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 8</title>
+</head>
+<body>
+    <script>
+
+        let cont=0;
+        let suma=0;
+        let number;
+        //iniciamos el bucle
+        do{
+            //pedimos numeros
+            number = prompt("Tell me a number: ");            
+            //lo transformamos a entero
+            number = parseInt(number);
+            //si cancela la operación salimos del bucle
+            if(number == null){
+                document.write("You canceled ");
+                break;
+            }
+            //si es numerico
+            if(!isNaN(number)){
+                //le sumamos a suma el numero introducido
+                suma+=number;
+                //sumamos el contador
+                cont++;
+            }
+        
+        }while (number!=0);
+        //si al salir del bucle y el ultimo numero no es null
+        if(number != null){
+            //restamos uno al contador para que no cuente el 0 ultimo introducido
+            cont--;
+            //mostramos la información
+            document.write("Cont: "+cont+"<br>");
+            document.write("Addition: "+suma+"<br>");
+            document.write("The average has been "+(suma/cont));
+        }
+    </script>
+</body>
+</html>

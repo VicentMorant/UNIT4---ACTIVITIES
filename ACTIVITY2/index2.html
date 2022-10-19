@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 2</title>
+</head>
+<body>
+
+    <script>
+
+        let word =prompt("Tell me a word in lowercase");
+        let key = prompt("Tell me the password");
+        let resultado="";         
+        if(!isNaN(key)){
+            for(let i=0; i < word.length;i--){ 
+                for(let j= 0 ; j<= key.length; j++ ){
+                    
+                    let l= word.charCodeAt(i) + parseInt(key.charAt(j));
+                    document.write(String.fromCharCode(l));                                
+                    i++;
+                }
+            }
+        }
+
+        document.write(resultado);
+        
+    </script>
+    
+</body>
+</html>

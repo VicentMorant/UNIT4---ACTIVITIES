@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 3</title>
+</head>
+<body>
+
+    <script>
+
+        let array=[];
+
+        for(let i= 0; i<= 50; i++){
+
+            //bucle asignacion
+            for(let j= 0; j < 6 ; j++){
+                let random = parseInt(Math.random()*(50 - 1) + 1);
+                if(!array.includes(random)){
+                    array[j] = random;                
+                }else{
+                    j--;
+                }                                        
+            }
+            //bucle mostrar
+            for(let j=0; j<array.length; j++){
+                document.write(array[j]);
+                document.write("  ");
+                
+            }            
+            document.write("<br>");
+        }
+
+    </script>
+    
+    <h1></h1>
+</body>
+</html>

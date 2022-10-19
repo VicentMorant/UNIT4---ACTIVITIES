@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 5</title>
+</head>
+<body>
+
+    <script>
+
+        let user = "";
+        let password = "";   
+        //aqui creamos las constantes
+        const letras ="ABCDEFGHIJKLMNÑOPQRSTUVWXYZ" ;
+        const letras2="abcdefghijklmnñopqrstuvwxyz";
+        //aqui los contadores iniciados a 0
+        //cuenta las mayusculas
+        let contL=0;
+        //cuenta las minusculas
+        let contl=0;
+        //cuenta los números
+        let contN=0;
+        //cuenta los simbolos
+        let contS=0;
+        //creamos el primer bucle para pedir la contra
+        //que se repetira mientras que los dos contadores sean igual a 0
+        while(contl==0 || contN==0){
+            //cada vez que de vuelta los resetearemos
+            contN=0;
+            contl=0;
+            //pedimos el usuario
+            user= prompt("Tell me your username: ");
+            if(user==null){                                
+                document.write("You canceled");
+            }
+            //aqui ira caracter por caracter insepeccionando los caracteres
+            for(let i = 0; i<user.length; i++){
+                let letra = user.charAt(i);
+                if(letras2.indexOf(letra) !=-1 ){                    
+                    contl++;                    
+                }else if(!isNaN(letra)){                                    
+                    contN++;                    
+                }else{
+                    //si no fuese ni minuscula ni numero igualamos i al tamaño de user para salir del for
+                    //y reseteamos las variables
+                    contN=0;
+                    contl=0;
+                    i=user.length;
+                }
+            }
+        }
+        
+        //bucle para sacar la contraseña
+        while(contl==0 || contN==0 || contL==0 || contS==0)     {
+            contN=0;
+            contL=0;
+            contl=0;
+            contS=0;
+            //pedimos la password
+            password=prompt("Tell me your password: ");
+            if(password==null){                                
+                document.write("You canceled");
+            }
+            for(let i = 0; i < password.length; i++){
+                let letra = password.charAt(i);
+                //si es no numerico 
+                if(isNaN(letra)){
+                    //comprobamos si es minuscula
+                    if(letras2.indexOf(letra) != -1){
+                        contl++;
+                    //o mayuscula
+                    }else if(letras.indexOf(letra) != -1){
+                        contL++;
+                    //y si no es una o la otra damos por echo que es un simbolo
+                    }else{
+                        contS++;
+                    }
+                //si es numerico...
+                }else{
+                    contN++;
+                }
+            }
+        }        
+        //si todo ha sido escrito correctamente mostramos el resultado
+        document.write("Good Job, user: "+user+", password: "+password);
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 6</title>
+</head>
+<body>
+
+    <script>
+        //creo array vacia
+        let array =[];
+        //como son 20 posiciones pues hasta 20
+        //pero en realidad llegara solo a 19 pero empieza por 0
+        for(let i =0; i<20; i++){
+            //le damos valor a la posicion i con un número aleatorio del 1 al 50            
+            array[i]=parseInt(Math.random()*(50 - 1) + 1);
+            //mostramos por pantalla cuantos asteriscos tendra que sacar
+            document.write("number: "+array[i]+" --> ");
+            //mientras j sea menor que el valor de array[i] imprimira *
+            for(let j=0; j<array[i]; j++){
+                document.write("*");
+            }
+            //luego salto de linea
+            document.write("<br>");
+        }
+        
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 7</title>
+</head>
+<body>
+    
+    <script>
+
+        let palindrome = prompt("Tell me a palindrome: ");
+        //esta funcion remplaza cualquier dieresis y tildes por la misma letra sin ello
+        //además quitamos los espacios con la funcion "/g" diciendo asi que cambie los espacios por vacios
+        palindrome=palindrome.toLocaleLowerCase();
+        palindrome = palindrome.replace(/[^-A-Za-z]+/g, '');
+        //como necesitamos un array para revertir la cadena usamos el split en el cual guardara en un array todos los caracteres del string
+        //invirtiendola y al mismo tiempo convertir esa array invertida en un string gracias al join
+        let invert = palindrome.split('').reverse().join('');
+        if(invert == palindrome){
+            document.write("Son iguales");
+        }else{
+            document.write("No son iguales");
+        }
+
+    </script>
+
+</body>
+</html>
