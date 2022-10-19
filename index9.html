@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity 9</title>
+</head>
+<body>
+    <script>
+
+        let array=[];
+        let group=[];        
+        let student = "";
+        let i=0;    
+        //mientras sea true que se repita
+        while(true){
+            student = prompt("Tell me a name");
+            //si ya esta en el array salta un aviso
+            if(array.includes(student)){
+                alert("Student repit");
+                //si pone end rompemos el bucle
+            }else if(student == "end"){
+                break;
+            }else{
+                array[i]=student;
+                i++;
+            }
+        }
+        //vemos cuantos grupos tenemos que hacer
+        let tamaño = Math.trunc(array.length/3);
+        //los creamos        
+        for(i=0; i < tamaño; i++){
+            group[i]=[];
+            
+        }
+       //mientras i sea menor que el tamaño de los grupos x 3 suma i + 3 cada vuelta
+        for(i=0; i<(tamaño*3);i+=3){  
+            //creamos un random de 0 a tamaño                      
+            let random = parseInt(Math.random()*tamaño);
+            let k=random;   
+            //si el grupo esta vacio
+            if(group[k].length == 0){                                                                 
+                for(let j=0; j<3; j++){      
+                    //añadimos en la posicion k j del array "grupos" el valor del array i que son los nombres
+                    group[k][j]=array[i]; 
+                    //mostramos el valor
+                    document.write("grupo ->"+k+" | valor-> "+group[k][j]+"<br>"); 
+                    //y eliminamos esa posicion para que no moleste
+                    array.splice(i,1);
+                }
+            }   
+            i-=3;
+                        
+        }
+        
+    </script>
+</body>
+</html>
